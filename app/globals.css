@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  --primary: #ff0032;
+  --primary-light: #ff4d70;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light) !important;
+}

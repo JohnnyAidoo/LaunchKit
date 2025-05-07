@@ -3,55 +3,55 @@ import { useEffect } from "react";
 import Head from "next/head";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { MessageCircle, Shield, Zap, Globe } from "lucide-react";
+import { Zap, Shield, Globe, ArrowRight } from "lucide-react";
 import Footer from "../../components/footer";
 import Pricing from "../../components/pricing";
 import Link from "next/link";
 import Image from "next/image";
 
-// Define features data
+// Define features data - customizable for any startup
 const features = [
   {
     icon: <Zap className="w-6 h-6 text-primary" />,
-    title: "Real-time AI Chat",
+    title: "Lightning Fast",
     description:
-      "Engage with video content through intelligent conversations powered by advanced AI technology.",
+      "Our platform delivers exceptional performance with optimized algorithms and efficient architecture.",
   },
   {
     icon: <Globe className="w-6 h-6 text-primary" />,
-    title: "Multi-language Support",
+    title: "Global Reach",
     description:
-      "Translate and understand content in multiple languages for global accessibility.",
+      "Connect with users worldwide with our multi-language support and global infrastructure.",
   },
   {
     icon: <Shield className="w-6 h-6 text-primary" />,
-    title: "Smart Summaries",
+    title: "Enterprise Security",
     description:
-      "Get instant, accurate summaries of any YouTube video with key points highlighted.",
+      "Rest easy knowing your data is protected with industry-leading security protocols and encryption.",
   },
 ];
 
-// Define FAQ data
+// Define FAQ data - customizable for any startup
 const faqs = [
   {
-    question: "How does the AI chat feature work?",
+    question: "How does your platform work?",
     answer:
-      "Our AI technology analyzes the video content in real-time, allowing you to ask questions and receive intelligent responses based on the video context.",
+      "Our platform uses cutting-edge technology to deliver a seamless experience. Simply sign up, configure your preferences, and start using our services immediately.",
   },
   {
-    question: "Is there a limit to video length?",
+    question: "What pricing plans do you offer?",
     answer:
-      "We support videos of any length, though longer videos may take a few moments to process for optimal chat experience.",
+      "We offer flexible pricing plans including a free tier for basic usage, and premium tiers with additional features for growing businesses and enterprises.",
   },
   {
-    question: "Can I use this for any YouTube video?",
+    question: "Is there a trial period available?",
     answer:
-      "Yes, our platform works with any public YouTube video. Simply paste the link and start chatting!",
+      "Yes, we offer a 14-day free trial on all our premium plans with no credit card required. Experience all features before making a commitment.",
   },
   {
-    question: "What languages are supported?",
+    question: "How can I get support?",
     answer:
-      "We support multiple languages for both chat and translation, making content accessible globally.",
+      "Our dedicated support team is available 24/7 through live chat, email, and phone. Premium users also get access to priority support channels.",
   },
 ];
 
@@ -69,24 +69,23 @@ function LandingPage() {
     <>
       <Head>
         <title>
-          {process.env.NEXT_PUBLIC_BASE_NAME} - Chat with YouTube Videos Using
-          AI
+          {process.env.NEXT_PUBLIC_BASE_NAME} - Innovative Solutions
         </title>
         <meta
           name="description"
-          content="Transform your YouTube viewing experience with AI-powered chat. Get real-time summaries, translations, and engage with video content like never before."
+          content="Transform your business with our innovative platform. Streamline operations, boost productivity, and scale with confidence."
         />
         <meta
           name="keywords"
-          content="YouTube AI, video chat, AI translation, video summary, content analysis"
+          content="startup, innovation, technology, business solution, digital transformation"
         />
         <meta
           property="og:title"
-          content={`${process.env.NEXT_PUBLIC_BASE_NAME} - YouTube Video AI Chat`}
+          content={`${process.env.NEXT_PUBLIC_BASE_NAME} - Innovative Solutions`}
         />
         <meta
           property="og:description"
-          content="Chat with YouTube videos using AI - get summaries, translations, and insights in real-time."
+          content="Empower your business with our cutting-edge platform designed for growth and efficiency."
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -101,26 +100,23 @@ function LandingPage() {
           data-aos="fade-up"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
-            Chat with any YouTube video
+            Elevate Your Business
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-500 mb-6 sm:mb-8 px-0 sm:px-4 md:px-10 lg:px-20">
-            {process.env.NEXT_PUBLIC_BASE_NAME} allows you to chat with YouTube
-            videos in real-time using AI - ask questions, get summaries,
-            pinpoint key points, translate content, and so much more!
+            {process.env.NEXT_PUBLIC_BASE_NAME} provides innovative solutions to
+            help your business grow, optimize operations, and stay ahead of the
+            competition in today's digital landscape.
           </p>
-          <div className="mb-8 w-full flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0">
+          <div className="mb-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <input
-              type="text"
-              placeholder="Paste your YouTube link here"
-              className="input input-lg w-full max-w-2xl"
+              type="email"
+              placeholder="Enter your email"
+              className="input input-lg w-full max-w-md"
               data-aos="fade-up"
             />
-            <Link
-              href="/sign-in"
-              className="w-full sm:w-auto sm:ml-4 mt-2 sm:mt-0"
-            >
+            <Link href="/sign-up" className="w-full sm:w-auto mt-2 sm:mt-0">
               <button className="btn btn-primary btn-lg w-full sm:w-auto">
-                Chat <MessageCircle className="ml-2" />
+                Get Started <ArrowRight className="ml-2" />
               </button>
             </Link>
           </div>
@@ -128,42 +124,35 @@ function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-12 sm:py-16 md:py-20 bg-base-200">
+      <section id="features" className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4">
           <h2
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 md:mb-16"
             data-aos="fade-up"
           >
-            Powerful Features
+            Key Features
           </h2>
-          <div className="w-full flex justify-center rounded-2xl mb-6 sm:mb-10">
-            <Image
-              src="/shot.png"
-              alt="Logo"
-              width={500}
-              height={500}
-              style={{ width: "100%", maxWidth: "800px" }}
-              className="px-2 sm:px-0"
-            />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="card bg-base-100 shadow-xl"
+                className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div className="card-body p-4 sm:p-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
-                    {feature.icon}
+                <div className="card-body">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      {feature.icon}
+                    </div>
+                    <h3 className="card-title ml-4">{feature.title}</h3>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-500">
-                    {feature.description}
-                  </p>
+                  <p className="text-gray-600">{feature.description}</p>
+                  <div className="card-actions justify-end mt-4">
+                    <Link href="/features" className="btn btn-sm btn-ghost">
+                      Learn more
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
@@ -171,8 +160,161 @@ function LandingPage() {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section
+        id="how-it-works"
+        className="py-12 sm:py-16 md:py-20 bg-base-200"
+      >
+        <div className="container mx-auto px-4">
+          <h2
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 md:mb-16"
+            data-aos="fade-up"
+          >
+            How It Works
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center" data-aos="fade-up" data-aos-delay="0">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-primary">1</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Sign Up</h3>
+              <p className="text-gray-500">
+                Create your account in minutes and set up your profile with our
+                easy onboarding process.
+              </p>
+            </div>
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-primary">2</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Configure</h3>
+              <p className="text-gray-500">
+                Customize your workspace and settings to match your specific
+                business requirements.
+              </p>
+            </div>
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-primary">3</span>
+              </div>
+              <h3 className="text-xl font-bold mb-2">Scale</h3>
+              <p className="text-gray-500">
+                Grow your business with our scalable solutions that adapt to
+                your changing needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <Pricing />
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <h2
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 md:mb-16"
+            data-aos="fade-up"
+          >
+            What Our Clients Say
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="card bg-base-200 shadow-sm" data-aos="fade-up">
+              <div className="card-body">
+                <div className="flex items-center mb-4">
+                  <div className="avatar">
+                    <div className="w-12 h-12 rounded-full overflow-hidden">
+                      <Image
+                        src="https://img.daisyui.com/images/profile/demo/superperson@192.webp"
+                        alt="Jane Doe"
+                        width={48}
+                        height={48}
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-bold">Jane Doe</h3>
+                    <p className="text-sm text-gray-500">CEO, TechCorp</p>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "This platform has transformed how we operate. We've seen a
+                  40% increase in productivity since implementation."
+                </p>
+              </div>
+            </div>
+            <div
+              className="card bg-base-200 shadow-sm"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div className="card-body">
+                <div className="flex items-center mb-4">
+                  <div className="avatar">
+                    <div className="w-12 h-12 rounded-full overflow-hidden">
+                      <Image
+                        src="https://img.daisyui.com/images/profile/demo/superperson@192.webp"
+                        alt="John Smith"
+                        width={48}
+                        height={48}
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-bold">John Smith</h3>
+                    <p className="text-sm text-gray-500">CTO, InnovateCo</p>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "The integration was seamless and the support team was
+                  exceptional. Highly recommend for any growing business."
+                </p>
+              </div>
+            </div>
+            <div
+              className="card bg-base-200 shadow-sm"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div className="card-body">
+                <div className="flex items-center mb-4">
+                  <div className="avatar">
+                    <div className="w-12 h-12 rounded-full overflow-hidden">
+                      <Image
+                        src="https://img.daisyui.com/images/profile/demo/superperson@192.webp"
+                        alt="Amy Lee"
+                        width={48}
+                        height={48}
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-bold">Amy Lee</h3>
+                    <p className="text-sm text-gray-500">Founder, StartupX</p>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "As a startup founder, I needed a solution that could grow
+                  with us. This platform has been the perfect fit for our
+                  evolving needs."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section id="faq" className="py-12 sm:py-16 md:py-20 bg-base-200">
@@ -207,15 +349,20 @@ function LandingPage() {
       <section className="py-12 sm:py-16 md:py-20 bg-base-100">
         <div className="container mx-auto px-4 text-center" data-aos="fade-up">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8">
-            Ready to Transform Your Video Experience?
+            Ready to Transform Your Business?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8">
-            Start chatting with YouTube videos today and unlock new
-            possibilities.
+          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto">
+            Join thousands of businesses that have already elevated their
+            operations with our innovative platform.
           </p>
-          <Link href={"/app"}>
-            <button className="btn btn-primary btn-lg">Get Started Now</button>
-          </Link>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link href="/sign-up">
+              <button className="btn btn-primary btn-lg">Get Started</button>
+            </Link>
+            <Link href="/contact">
+              <button className="btn btn-outline btn-lg">Contact Sales</button>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -229,9 +376,7 @@ function LandingPage() {
             reserved.
           </p>
           <p className="mt-2">
-            YouTube™ is a trademark of Google LLC.{" "}
-            {process.env.NEXT_PUBLIC_BASE_NAME} is not affiliated with or
-            endorsed by YouTube or Google LLC.
+            Designed with ♥ for innovative businesses worldwide.
           </p>
         </div>
       </div>

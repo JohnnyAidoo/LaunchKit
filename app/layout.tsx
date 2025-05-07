@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import Script from "next/script";
 
 import {
   ClerkProvider,
@@ -12,7 +11,6 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import Header from "../components/header";
-import AnalyticsTracker from "../components/AnalyticsTracker"; // ✅ Add this
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -98,40 +96,9 @@ export default async function RootLayout({
   return (
     <ClerkProvider signInForceRedirectUrl="/app">
       <html lang="en">
-        {/* Google Analytics 4 Script */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-6Y3ZPYW79W"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-6Y3ZPYW79W', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
-
-        {/* Umami Analytics */}
-        <Script
-          defer
-          src="https://cloud.umami.is/script.js"
-          data-website-id="4562e6f8-721b-4709-a35d-e27f9a43e8e4"
-          strategy="afterInteractive"
-        />
-
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          {/* Google Analytics client-side navigation tracker */}
-          <AnalyticsTracker />
-
           {/* App Header with Clerk */}
           <Header
             signInButton={

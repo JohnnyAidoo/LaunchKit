@@ -105,7 +105,7 @@ function LandingPage() {
           <p className="text-base sm:text-lg md:text-xl text-gray-500 mb-6 sm:mb-8 px-0 sm:px-4 md:px-10 lg:px-20">
             {process.env.NEXT_PUBLIC_BASE_NAME} provides innovative solutions to
             help your business grow, optimize operations, and stay ahead of the
-            competition in today's digital landscape.
+            competition in today&apos;s digital landscape.
           </p>
           <div className="mb-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <input
@@ -248,8 +248,8 @@ function LandingPage() {
                   </div>
                 </div>
                 <p className="text-gray-600">
-                  "This platform has transformed how we operate. We've seen a
-                  40% increase in productivity since implementation."
+                  &quot;This platform has transformed how we operate. We&apos;ve seen a
+                  40% increase in productivity since implementation.&quot;
                 </p>
               </div>
             </div>
@@ -277,8 +277,8 @@ function LandingPage() {
                   </div>
                 </div>
                 <p className="text-gray-600">
-                  "The integration was seamless and the support team was
-                  exceptional. Highly recommend for any growing business."
+                  &quot;The integration was seamless and the support team was
+                  exceptional. Highly recommend for any growing business.&quot;
                 </p>
               </div>
             </div>
@@ -306,9 +306,9 @@ function LandingPage() {
                   </div>
                 </div>
                 <p className="text-gray-600">
-                  "As a startup founder, I needed a solution that could grow
+                  &quot;As a startup founder, I needed a solution that could grow
                   with us. This platform has been the perfect fit for our
-                  evolving needs."
+                  evolving needs.&quot;
                 </p>
               </div>
             </div>
